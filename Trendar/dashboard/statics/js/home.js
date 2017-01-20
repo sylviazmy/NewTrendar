@@ -1,30 +1,22 @@
 /**
  * Created by I321310 on 12/30/2016.
  */
- function allowDrop(ev)
+function allowDrop(ev)
 {
-ev.preventDefault();
+    ev.preventDefault();
 };
 
 function drag(ev)
 {
-ev.dataTransfer.setData("Text",ev.target.id);
+    ev.dataTransfer.setData("Text",ev.target.id);
 };
 
 function drop(ev)
 {
-ev.preventDefault();
-var data=ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
 };
-
-
-
-
-
-/**
- * Created by I321310 on 1/13/2017.
- */
 
 var rankUrl = 'http://127.0.0.1:8000/api/in_t/';
 var tfUrl = 'http://127.0.0.1:8000/api/in_e/';
@@ -194,97 +186,75 @@ function display1(urlAddress){
 //};
 
 var psgContent = [
-    "Passage 0 Passage 0 Passage 0 Passage 0",
-    "Passage 1 Passage 1 Passage 1 Passage 1",
-    "Passage 2 Passage 2 Passage 2 Passage 2",
-    "Passage 3 Passage 3 Passage 3 Passage 3",
-    "Passage 4 Passage 4 Passage 4 Passage 4",
-    "Passage 5 Passage 5 Passage 5 Passage 5",
-    "Passage 6 Passage 6 Passage 6 Passage 6",
-    "Passage 7 Passage 7 Passage 7 Passage 7",
-    "Passage 8 Passage 8 Passage 8 Passage 8",
-    "Passage 9 Passage 9 Passage 9 Passage 9"
+    "Passage 0 Passage 0 Passage 0 Passage 0",
+    "Passage 1 Passage 1 Passage 1 Passage 1",
+    "Passage 2 Passage 2 Passage 2 Passage 2",
+    "Passage 3 Passage 3 Passage 3 Passage 3",
+    "Passage 4 Passage 4 Passage 4 Passage 4",
+    "Passage 5 Passage 5 Passage 5 Passage 5",
+    "Passage 6 Passage 6 Passage 6 Passage 6",
+    "Passage 7 Passage 7 Passage 7 Passage 7",
+    "Passage 8 Passage 8 Passage 8 Passage 8",
+    "Passage 9 Passage 9 Passage 9 Passage 9"
 ];
 
-function autoScroll() {
+function autoScroll( maxRowInList ) {
+    var li = $('#top-hl div ul li');
+    var totalHeight =
+        parseInt(li.css('margin-top'), 10) +
+        parseInt(li.css('margin-bottom'), 10) +
+        parseInt(li.css('border-top'), 10) +
+        parseInt(li.css('border-bottom'), 10) +
+        parseInt(li.css('padding-top'), 10) +
+        parseInt(li.css('padding-bottom'), 10) +
+        parseInt(li.css('height'), 10);
 
-//init: load
-//scroll
-//when the bottom of the first one reaches the top line, delete in the array and append a new one
-//when hover, stop scroll
+    var ul = $('#top-hl div ul');
+    ul.html('');
+    $('#top-hl div').css('height', ((maxRowInList - 1) * totalHeight).toString() + 'px')
 
-    var li = $('#top-hl div ul li');
-    var totalHeight =
-        parseInt(li.css('margin-top'), 10) +
-        parseInt(li.css('margin-bottom'), 10) +
-        parseInt(li.css('border-top'), 10) +
-        parseInt(li.css('border-bottom'), 10) +
-        parseInt(li.css('padding-top'), 10) +
-        parseInt(li.css('padding-bottom'), 10) +
-        parseInt(li.css('height'), 10);
+    var cells = [];
+    psgContent.forEach(function (item) {
+        cells.push($('<li>').text(item));
+    });
 
-    var ul = $('#top-hl div ul');
-    ul.html('');
-    var maxRowInList = 6;
-    $('#top-hl div').css('height', ((maxRowInList - 1) * totalHeight).toString() + 'px')
+    var cellsInList = [];
+    for(var i = 0; i < maxRowInList; i++){
+        cellsInList[i] = cells[i];
+    }
 
-    var cells = [];
-    psgContent.forEach(function (item) {
-        cells.push($('<li>').text(item));
-    });
+    cellsInList.forEach(function (item) {
+        item.appendTo(ul);
+    });
 
-    var cellsInList = [];
-    for(var i = 0; i < maxRowInList; i++){
-        cellsInList[i] = cells[i];
-    }
+    var appendIndex = maxRowInList;
+    function scroll() {
+        ul.animate({top:'-' + totalHeight.toString() + 'px'},1000,function () {
+            cellsInList.splice(0,1);
+            cellsInList.push(cells[appendIndex++]);
+            ul.html('');
+            ul.css('top','0');
+            cellsInList.forEach(function (item) {
+                item.appendTo(ul);
+            });
+            if(appendIndex >= cells.length)
+                appendIndex = 0;
+            scroll();
+        });
+    };
+    scroll();
 
-    cellsInList.forEach(function (item, index) {
-        item.appendTo(ul);
-    });
-
-    ul.animate({top:'-='+totalHeight.toString()+'px'},2000,function () {
-        cellsInList.splice(0,1);
-        cellsInList.push(cells[6]);
-        ul.html('');
-        ul.css('top','0');
-        cellsInList.forEach(function (item, index) {
-            item.appendTo(ul);
-        });
-    });
-
-    ul.animate({top:'-='+totalHeight.toString()+'px'},2000,function () {
-        cellsInList.splice(0,1);
-        cellsInList.push(cells[7]);
-        ul.html('');
-        ul.css('top','0');
-        cellsInList.forEach(function (item, index) {
-            item.appendTo(ul);
-        });
-    });
-
-    ul.animate({top:'-='+totalHeight.toString()+'px'},2000,function () {
-        cellsInList.splice(0,1);
-        cellsInList.push(cells[8]);
-        ul.html('');
-        ul.css('top','0');
-        cellsInList.forEach(function (item, index) {
-            item.appendTo(ul);
-        });
-    });
-    // ul.animate({top:'-='+totalHeight.toString()+'px'},2000);
-    //
-    // ul.animate({top:'-='+totalHeight.toString()+'px'},2000);
-    //
-    // ul.animate({top:'-='+totalHeight.toString()+'px'},2000);
+    ul.hover(function () {
+        ul.stop();
+    }, function () {
+        scroll();
+    });
 };
-
-
-
 
 
 $(document).ready(function(){
         display1(rankUrl);
-        autoScroll();
+        autoScroll(8);
 //        display2();
 //        $('.switch input').change(function(){
 //                if(this.checked)
@@ -296,7 +266,3 @@ $(document).ready(function(){
 
     }
 );
-
-
-
-
