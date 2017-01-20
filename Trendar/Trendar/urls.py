@@ -21,7 +21,7 @@ from dashboard import views as dashboard_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', dashboard_views.index, name='home'),
-    url(r'^in/', dashboard_views.whatsin, name='in'),
+    url(r'^whatsin/', dashboard_views.whatsin, name='whatsin'),
     url(r'^negative/', dashboard_views.neg, name='negative'),
     url(r'^sentiment/', dashboard_views.sentiment, name='sentiment'),
     url(r'^api/in_t/$', dashboard_views.Elements_list_t, name='api_in_t'),

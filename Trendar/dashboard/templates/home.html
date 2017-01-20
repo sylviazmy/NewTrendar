@@ -71,7 +71,7 @@
     <div draggable="true" ondragstart="drag(event)" id="drag1" class="info-box">
 		<h3>Whats' In</h3>
         <div style="font-size:13px;float:right;">
-        <a href="http://www.baidu.com">Detail..</a>
+        <a href="{% url 'whatsin' %}">Detail..</a>
         </div>
         <div class="thumbnail">
             <div id="word-cloud"style="width:180px;height:120px">
@@ -79,13 +79,16 @@
         </div>
 
 	</div>
-	<div draggable="true" ondragstart="drag(event)" id="drag2">
-        <div class="info-box" id="top-hl">
-            <h3>Top Highlights</h3>
-            <div style="font-size:13px;float:right;">
+	<div draggable="true" ondragstart="drag(event)" id="drag2" class="info-box">
+        <div>
+        <h3>Top Highlights</h3>
+        <div style="font-size:13px;float:right;">
                 <a href="{% url 'negative' %}">Detail..</a>
-            </div>
-            <div>
+        </div>
+        </div>
+        <br>
+        <div id="top-hl">
+            <div class="thumbnail">
                 <ul>
                     <li>Sample Text Sample Text Sample Text Sample Text</li>
                 </ul>
@@ -98,20 +101,25 @@
 	<div draggable="true" ondragstart="drag(event)" id="drag3" class="info-box">
 	<h3>Top Complaints</h3>
         <div style="font-size:13px;float:right;">
-        <a href="http://www.w3school.com.cn">Detail..</a>
+        <a href="{% url 'negative' %}">Detail..</a>
         </div>
+        <br>
         <div class="thumbnail">
-            <div id="topcomplaints1" style="width:180px;height:180px"></div>
-            <div id="topcomplaints2" style="width:180px;height:180px"></div>
+            <!--<script>display2()</script>-->
+
+            <div id="topcomplaints1" class="info-box" style="width:160px;height:200px">
+                <a><img src="/statics/images/shoeEg1.png" style="width: 50px;height: 50px;"></a><br>
+                <!--<script>document.write(display2())</script>-->
+            </div>
+            <div id="topcomplaints2" class="info-box" style="width:160px;height:200px">
+            <a><img src="/statics/images/shoeEg2.png" style="width: 50px;height: 50px;"></a><br>
+            </div>
         </div>
 	</div>
 </div>
 
 <div id="dragdiv4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<!--<div id="dragdiv5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
-
-<!--<div id="dragdiv6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
 
 </div>
 </div>

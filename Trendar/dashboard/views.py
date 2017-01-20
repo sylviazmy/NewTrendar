@@ -27,7 +27,7 @@ def index(request):
 def whatsin(request):
     elements = in_textrank.objects.all()
     print(elements)
-    return render(request, 'in.html', {'data':elements})
+    return render(request, 'whatsin.html', {'data':elements})
 
 def neg(request):
     neg = negative.objects.all()
