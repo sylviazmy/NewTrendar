@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    color: #2a2a2a;
+    background-color: white;
+    font-family: Arial,微软雅黑,"Microsoftyahei","HiraginoSansGB","冬青黑体简体中文w3",STXihei,华文细黑,SimSun,宋体,Heiti,黑体,sans-serif;
+}
+
+body #wrapper{
+    width: 90%;
+    margin: auto;
+    background-color: white;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    margin-top: 30px;
+    border-bottom: 1px solid lightgray;
+    color: gray;
+    text-align: center;
+    overflow: hidden;
+}
+
+header h1{
+    margin: 0;
+    display: inline-block;
+
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+header a{
+    padding: 20px 4px 4px;
+}
+
+header a img{
+    width: 30px;
+    height: 30px;
+}
+
+header a:nth-child(1), header a:nth-child(2), header a:nth-child(3){
+    float: left;
+}
+
+header a:last-child{
+    float: right;
+}
+
+a:link,
+a:visited {
+color:#87CEFA;
+text-decoration:underline;
+}
+a:hover,
+a:active {
+color:#1E90FF;
+text-decoration:none;
+}
+
+#side-column, #main-column{
+    padding: 1%;
+
+    float: left;
+}
+
+#side-column{
+    width: 18%;
+}
+
+#main-column{
+    width: 78%;
+}
+
+.info-box{
+    padding: 10px 10%;
+    margin-bottom: 20px;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.info-box h3{
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+.info-box dt{
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 5px;
+}
+.info-box dd{
+    margin: 0;
+    float: right;
+}
+
+.drop-down-menu{
+    text-align: center;
+}
+
+select{
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    border: none;
+
+    font-size: 18px;
+    background: transparent;
+
+    /*在选择框的最右侧中间显示小箭头图片*/
+    /*background: url("images/dropdown.png") no-repeat scroll right center transparent;*/
+
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    /*padding-right: 14px;*/
+}
+
+
+#top-reads ul{
+    padding: 0;
+}
+
+#top-reads li{
+    margin-bottom: 10px;
+
+    text-decoration: underline;
+}
+
+#compare ul{
+    padding: 0;
+}
+
+#compare li{
+    margin: 5px 2px;
+    padding: 3px 8px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#compare{
+    overflow: hidden;
+}
+
+#compare button{
+    float: right;
+}
+
+#feature h3{
+    display: inline-block;
+}
+
+#feature span{
+    margin: 5px 2px;
+    padding: 3px 8px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+#feature ul{
+    padding: 0;
+    max-height: 400px;
+    overflow-x: visible;
+    overflow-y: hidden;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+#feature ul:hover{
+    overflow-y: auto;
+}
+
+#feature li{
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    border-bottom: 0.5px solid lightgray;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+#feature li:hover{
+    background-color: lightgray;
+}
+
+.switch{
+    display: inline-block;
+    float: right;
+    width: 180px;
+    height: 26px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.switch input{
+    display: none;
+}
+
+.slider{
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #9ad2c8;
+    transition: .4s;
+}
+
+.slider span{
+    font-size: 15px;
+    color: white;
+    border-radius: 13px;
+    text-align: center;
+    height: 18px;
+    width: 86px;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+}
+
+.slider span:nth-child(1){
+    left: 4px;
+}
+
+.slider span:nth-child(2){
+    right: 4px;
+}
+
+.slider:after{
+    border-radius: 13px;
+    content: "TextRank";
+    text-align: center;
+    font-size: 15px;
+    position: absolute;
+    height: 18px;
+    width: 86px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider:after{
+    transform: translateX(86px);
+    content: "TF-IDF";
+}
+
+
+#column{
+    padding: 2%;
+    width:100%;
+    float: left;
+}
+
+/*#column-1{
+    width:80%;
+}*/
+
+/*#column-2{
+    width: 45%;
+}
+
+#column-3{
+    width: 18%;
+}*/
+
+#dragdiv1,#dragdiv2,#dragdiv3,#dragdiv4
+{
+	float:left; width:250px; margin:10px;padding:10px;
+}
+
+#top-hl div{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+#top-hl ul{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+#top-hl li{
+    height: 40px;
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
+

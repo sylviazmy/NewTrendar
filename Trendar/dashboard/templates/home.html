@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's In</title>
+    <link href="/statics/css/trend.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <!--<script src="https://github.com/douglascrockford/JSON-js/blob/master/json2.js"></script>-->
+    <script src="/statics/js/echarts.js"></script>
+
+    <script src="/statics/js/echarts-wordcloud.js"></script>
+    <script src="/statics/js/home.js"></script>
+    <script src="/statics/js/autoscroll.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+    <header>
+        <a><img src="/statics/images/person.png"></a>
+        <a><img src="/statics/images/back.png"></a>
+        <a><img src="/statics/images/home.png"></a>
+        <h1>ML Analytics Portal</h1>
+        <a><img src="/statics/images/dropdown.png"></a>
+        <a><img src="/statics/images/search.png"></a>
+    </header>
+
+<div id="column">
+    <!--<div class="info-box" id="whatsin">
+        <h3>Whats' In</h3>
+        <div class="thumbnail">
+        </div>
+    </div>
+    <div class="info-box" id="topHighlights">
+        <h3>Top Highlights</h3>
+        <div class="thumbnail">
+        	<p id = "update-time-data"><script>document.write(Time())</script></p>
+        </div>
+    </div>
+</div>
+
+<div id="column-1">
+    <div class="info-box" id="topComplaints">
+        <h3>Top Complaints</h3>
+        <div class = "thumbnail"></div>
+    </div>-->
+
+<!--</div>-->
+
+
+    <!--<div id="column-3">
+        <div class="info-box" id="compare">
+            <h3>Compare</h3>
+            <ul>
+                <li>麂皮</li>
+                <li>真皮</li>
+                <li>人造革</li>
+            </ul>
+        </div>
+    </div>-->
+
+<div id="dragdiv1" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+	<!--<div draggable="true" ondragstart="drag(event)" id="drag1" class="info-box">-->
+		<!--<h3>Whats' In</h3>-->
+        <!--<div class="thumbnail">-->
+            <!--<div id="word-cloud"style="width:180px;height:120px"></div>-->
+        <!--</div>-->
+	<!--</div>-->
+
+</div>
+<div id="dragdiv2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div draggable="true" ondragstart="drag(event)" id="drag1" class="info-box">
+		<h3>Whats' In</h3>
+        <div style="font-size:13px;float:right;">
+        <a href="http://www.baidu.com">Detail..</a>
+        </div>
+        <div class="thumbnail">
+            <div id="word-cloud"style="width:180px;height:120px">
+            </div>
+        </div>
+
+	</div>
+	<div draggable="true" ondragstart="drag(event)" id="drag2">
+        <div class="info-box" id="top-hl">
+            <h3>Top Highlights</h3>
+            <div style="font-size:13px;float:right;">
+                <a href="{% url 'negative' %}">Detail..</a>
+            </div>
+            <div>
+                <ul>
+                    <li>Sample Text Sample Text Sample Text Sample Text</li>
+                </ul>
+            </div>
+        </div>
+	</div>
+</div>
+
+<div id="dragdiv3" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<div draggable="true" ondragstart="drag(event)" id="drag3" class="info-box">
+	<h3>Top Complaints</h3>
+        <div style="font-size:13px;float:right;">
+        <a href="http://www.w3school.com.cn">Detail..</a>
+        </div>
+        <div class="thumbnail">
+            <div id="topcomplaints1" style="width:180px;height:180px"></div>
+            <div id="topcomplaints2" style="width:180px;height:180px"></div>
+        </div>
+	</div>
+</div>
+
+<div id="dragdiv4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<!--<div id="dragdiv5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
+
+<!--<div id="dragdiv6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
+
+</div>
+</div>
+</body>
+</html>

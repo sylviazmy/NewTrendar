@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's In</title>
+    <link href="trend.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrapper">
+
+    <header>
+        <a><img src="images/person.png"></a>
+        <a><img src="images/back.png"></a>
+        <a><img src="images/home.png"></a>
+        <h1>ML Analytics Portal</h1>
+        <a><img src="images/dropdown.png"></a>
+        <a><img src="images/search.png"></a>
+    </header>
+
+    <div id="side-column">
+        <div class="info-box drop-down-menu">
+            <select>
+                <option>This Month</option>
+                <option>This Week</option>
+                <option>Last Month</option>
+                <option>Last Week</option>
+            </select>
+        </div>
+        <div class="info-box">
+            <h3>Ranking</h3>
+            <input type="radio" id="smart-rank" value="smart" name="rank" checked="checked"><label for="smart-rank">Smart Rank</label>
+            <br>
+            <input type="radio" id="lame-rank" value="lame" name="rank"><label for="lame-rank">Lame Rank</label>
+        </div>
+    </div>
+
+    <div id="main-column">
+        <div class="info-box" id="word-cloud">
+            <h3>What's In</h3>
+
+        </div>
+        <div class="info-box" id="pos-detail">
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

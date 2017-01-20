@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    color: #2a2a2a;
+    font-family: Arial, 微软雅黑, "Microsoft yahei", "Hiragino Sans GB", "冬青黑体简体中文 w3", STXihei, 华文细黑, SimSun, 宋体, Heiti, 黑体, sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    border-bottom: 1px solid lightgray;
+    color: gray;
+
+    text-align: center;
+}
+
+header h1{
+    margin: 0;
+    padding-right: 50px;
+    display: inline-block;
+
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+header h1:first-letter{
+    font-size: 80px;
+    color: #98101d;
+}
+
+header input{
+    width: 200px;
+}
+
+#column-1, #column-2, #column-3{
+    padding: 1%;
+
+    float: left;
+}
+
+#column-1{
+    width: 23%;
+}
+
+#column-2{
+    width: 48%;
+}
+
+#column-3{
+    width: 23%;
+}
+
+.info-box{
+    padding: 10px 10%;
+    margin-bottom: 20px;
+
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.info-box h3{
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+.info-box dt{
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 5px;
+}
+.info-box dd{
+    float:right;
+}
+
+.entry img{
+    width: 120px;
+    height: 120px;
+}
+
+.entry{
+    width: 33%;
+    float: left;
+
+    text-align: center;
+}
+
+#navigate li{
+    padding-left: 12px;
+
+    float: left;
+}
+
+#navigate ul{
+    height: 16px;
+    margin: 0;
+    padding: 10px 25% 4px;
+
+    font-size: 16px;
+}
+
+#update-time{
+    text-align: center;
+}
+
+#top-reads ul{
+    padding: 0;
+}
+
+#top-reads li{
+    margin-bottom: 10px;
+
+    text-decoration: underline;
+}
